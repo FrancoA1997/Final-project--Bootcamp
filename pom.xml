@@ -11,7 +11,7 @@
     <groupId>com.all4pets</groupId>
     <artifactId>Final</artifactId>
     <version>0.0.1-SNAPSHOT</version>
-    <packaging>war</packaging>
+    <packaging>jar</packaging>
     <name>all4pets</name>
     <description>Proyecto final EGG</description>
     <properties>
