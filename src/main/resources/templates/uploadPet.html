@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+    <head>
+        <meta charset="utf-8">
+            <title>Upload stray/lost pet</title>
+            <meta name="viewport" content="width=device-width, initial-scale=1.0">
+                <link rel="stylesheet" href="fonts/material-design-iconic-font/css/material-design-iconic-font.min.css">
+                    <link rel="icon" href="imgs/filled_pets_icon-icons.com_59360.png">
+                        <link rel="stylesheet" href="/cargaMascota.css">
+                            </head>
+
+                            <body>
+
+                                <div class="wrapper">
+                                    <div class="inner">
+                                        <form action="/user/uploadNewPet" method="POST" enctype="multipart/form-data">
+                                            <h3>Upload any stray/lost animal and call for help!</h3>
+                                            <p th:if="${error != null}" th:text="${error}" style="color:red;"></p>
+                                            <p th:if="${exito != null}" th:text="${exito}" style="color:green;"></p>
+                                            <p>Fill the fields with key information</p>
+                                            <label class="form-group">
+                                                <input type="text" name="type" class="form-control"  >
+                                                    <span>Race</span>
+                                                    <span class="border"></span>
+                                            </label>
+
+                                            <label class="form-group" >
+                                                <input placeholder="Include information such as(Gender, Age, ETC)" name="observation" class="form-control">
+                                                    <span >More info</span>
+                                                    <span class="border"></span>
+                                            </label>
+                                            <select name="state1" class="form-control">
+                                                <option th:each="state : ${states}" th:text="${state.getState()}"></option>
+                                            </select>
+
+                                            <label>Select an image of the animal</label>
+                                            <input type="file" class="form-control" name="file"/>
+                                            <input type="hidden" th:value="*{session.usuariosession.id}" class="form-control" name="id"/> 
+
+                                            <button>Upload
+                                                <i class="zmdi zmdi-arrow-right"></i>
+                                            </button>
+                                        </form>
+                                        <a href="/adoptions" style="text-decoration: none;"><button>Go back
+                                            <i class="zmdi zmdi-arrow-right"></i>
+                                        </button></a>
+                                    </div>
+                                </div>
+
+                            </body>
+                            </html>

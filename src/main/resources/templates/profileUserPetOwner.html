@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="es" xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+    <head>
+        <meta charset="UTF-8">
+            <meta http-equiv="X-UA-Compatible" content="IE=edge">
+                <meta name="viewport" content="width=device-width, initial-scale=1.0">
+                    <link rel="stylesheet"  href="/perfil.css"/>
+                        <link rel="stylesheet" type="text/css" href="https://necolas.github.io/normalize.css/8.0.1/normalize.css"/>
+                            <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous" />
+
+                             
+                                <title>Profile</title>
+                                </head>
+                                <body>
+
+           
+            
+                                    <section class="seccion-perfil-usuario">
+                                        <div class="perfil-usuario-header">
+                                            <div class="perfil-usuario-portada">
+                                                <div class="perfil-usuario-avatar">
+                                                         <img th:src="${'/image/user?id=' + userPetOwner.id}" alt="img-avatar">
+                                                   <!--   <img src="http://localhost/multimedia/relleno/img-c9.png" alt="img-avatar">-->
+                                                </div>
+                                                
+                                            </div>
+                                        </div>
+                                        <div class="perfil-usuario-body">
+                                            <div class="perfil-usuario-bio">
+                                                <h3 class="titulo" th:if="${userPetOwner.id != null}" th:text="${userPetOwner.userName}" ></h3>
+                                                
+                                            </div>
+                                            <h4>USER INFORMATION</h4>
+                                            <div class="perfil-usuario-footer">
+                                                
+                                                <ul class="lista-datos">
+                                               
+                                                    <li><i class="icono fas fa-phone-alt"></i> Phone-Number: <label style="color: green" class="texto" th:if="${userPetOwner.id != null}" th:text="${userPetOwner.phone}"/></li>
+                                                    <li><i class="icono fas fa-briefcase"></i> Email: <label style="color: green" class="texto" th:if="${userPetOwner.id != null}" th:text="${userPetOwner.email}"/></li>
+
+                                                </ul>
+                                                <ul class="lista-datos">
+                                                    <li><i class="icono fas fa-map-marker-alt"></i> Address: <label style="color: green" class="texto" th:if="${userPetOwner.id != null}" th:text="${userPetOwner.address}"/></li>
+
+                                                </ul>
+                                          
+                                            </div>
+                                            <br>
+                                            <div class="telefono">
+                <button href="/adoptions" class="telefono">Contact User</button>
+            </div>
+                                                <br>
+                                            <button type="button" class="telefono">
+                    <a th:href="@{/adopciones}" style="text-decoration: none; color: white;">Back to adoptions!</a>
+                </button>
+
+                                            <!--
+                                
+                                                <div class="redes-sociales">
+                                                    <a href="" class="boton-redes facebook fab fa-facebook-f"><i class="icon-facebook"></i></a>
+                                                    <a href="" class="boton-redes twitter fab fa-twitter"><i class="icon-twitter"></i></a>
+                                                    <a href="" class="boton-redes instagram fab fa-instagram"><i class="icon-instagram"></i></a>
+                                                </div>
+                                            -->
+                                        </div>
+                                    </section>
+                                </body>
+                                </html>

@@ -1,0 +1,134 @@
+@font-face{
+    font-family: "Cafe Matcha";
+        src: url ("fonts/Cafe Matcha.ttf") format("TrueType");
+}
+body{
+	margin: 0;
+	padding: 0;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	min-height: 100vh;
+	font-family: 'Jost', sans-serif;
+	background: url(imgs/background.png);
+    background-position: center;
+    background-size: cover;
+	
+}
+/*
+nav - logo
+*/
+a{text-decoration: none;}
+
+h1{
+	font-family: 'Cafe Matcha';
+    font-weight: 300;
+    font-size: 40px;
+    letter-spacing: 2px;
+    color: #6C63FF;
+}
+
+.logo{
+	position: fixed;
+	top: 0;	
+	
+}
+
+.logo a{
+    font-style: bold;
+    color: var(--light-blue);
+    margin: 0 20px;
+}
+.logo a:hover{color: #6C63FF;}
+
+
+/*
+Login Panel
+*/
+.signup{
+	height: 91%;
+	margin: 10px auto;
+	z-index: 3;
+}
+
+.main{
+	width: 500px;
+	height: 550px;
+	overflow: hidden;
+	border-radius: 45px;
+	box-shadow: 5px 20px 50px #000;
+}
+
+
+
+
+
+#chk{
+	
+	display: none;
+}
+
+label{
+	color: #6C63FF;
+	font-size: 1.3em;
+	justify-content: center;
+	display: flex;
+	margin: 60px;
+	font-weight: bold;
+	cursor: pointer;
+	transition: .5s ease-in-out;
+}
+input{
+	width: 60%;
+	height: 20px;
+	background: #e0dede;
+	justify-content: center;
+	display: flex;
+	margin: 20px auto;
+	padding: 10px;
+	border: none;
+	outline: none;
+	border-radius: 5px;
+}
+button{
+	width: 60%;
+	height: 40px;
+	margin: 10px auto;
+	justify-content: center;
+	display: block;
+	color: #fff;
+	background: #6C63FF;
+	font-size: 1em;
+	font-weight: bold;
+	margin-top: 20px;
+	outline: none;
+	border: none;
+	border-radius: 5px;
+	transition: .2s ease-in;
+	cursor: pointer;
+}
+button:hover{
+	background: #525099;
+}
+.login{
+	
+	border-radius:  20%;
+	transform: translateY(-180px);
+	transition: .3s ease-in-out;
+	background: white;
+}
+.login label{
+	height: 60px;
+	color: #6C63FF;
+	transform: scale(.6);
+}
+
+#chk:checked ~ .login{
+	transform: translateY(-500px);
+}
+#chk:checked ~ .login label{
+	transform: scale(1);	
+}
+#chk:checked ~ .signup label{
+	transform: scale(.6);
+}

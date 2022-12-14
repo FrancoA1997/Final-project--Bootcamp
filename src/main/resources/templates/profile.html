@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="es" xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="https://necolas.github.io/normalize.css/8.0.1/normalize.css">
+    <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous" />
+    <link rel="stylesheet" href="/perfil.css">
+    <link rel="icon" href="imgs/filled_pets_icon-icons.com_59360.png">
+    <title>Your Profile </title>
+</head>
+<body>
+
+    <section class="seccion-perfil-usuario">
+        <div class="perfil-usuario-header">
+            <div class="perfil-usuario-portada">
+                <div class="perfil-usuario-avatar">
+                    <img th:src="${'/image/user?id=' + session.usuariosession.id}" alt="img-avatar">
+                
+                    </button>
+                </div>
+                <a style="text-decoration: none; color: white;" th:href="@{/user/editProfile(id=${session.usuariosession.id})}">
+                <button type="button" class="boton-edicion">
+                    Update profile
+                </button></a>
+            </div>
+        </div>
+        <div class="perfil-usuario-body">
+            <div class="perfil-usuario-bio">
+                <h3 class="titulo"><p th:text="${session.usuariosession.userName}"></p></h3>
+               
+            </div>
+            <div class="perfil-usuario-footer">
+                <ul class="lista-datos">
+                    
+                    <li><i class="icono fas fa-briefcase"></i> <strong>Email:</strong> <label th:text="${session.usuariosession.email}"></label></li>
+                                       <li><i class="icono fas fa-phone-alt"></i> <strong>Phone-number: </strong> <label th:text="${session.usuariosession.phone}"></label></li>
+                </ul>
+                <ul class="lista-datos">
+                    <li><i class="icono fas fa-map-marker-alt"></i> <strong>Address:</strong> <p th:text="${session.usuariosession.address}"></p></li>
+                </ul>
+            </div>
+        </div>
+        <a th:href="@{/home}" style="text-decoration: none; color: white;">
+            <button type="button" class="telefono" style="margin-top: 25px">
+             Go Back!
+        </button>
+        </a>
+    </section>
+</body>
+</html>

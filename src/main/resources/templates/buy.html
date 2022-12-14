@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+    <head>
+        <meta charset="UTF-8">
+            <meta http-equiv="X-UA-Compatible" content="IE=edge">
+                <meta name="viewport" content="width=device-width, initial-scale=1.0">
+                    <title>Editar Datos</title>
+                    <link  th:href="@{one-page-wonder.min.css}" rel="stylesheet">
+                        <link th:href="@{bootstrap.min.css}" rel="stylesheet">
+                            <link th:href="@{one-page-wonder.css}" rel="stylesheet">
+                                <link rel="stylesheet" href="/editarDatosPerfil2.css">
+                                    <link rel="icon" href="imgs/filled_pets_icon-icons.com_59360.png">
+
+                                        <link rel="stylesheet" href="style.css">
+                                            </head>
+                                            </head>
+                                            <body style="background: url(background.png)!important ">
+
+
+                                                <nav style="background:#333333 !important; opacity: 0.9" border="1" bordercolor="#00CC66" class="fixed-top navbar navbar-expand-lg navbar-dark bg-black my-navbar">
+                                                    <h1 class="logo" ><a href="/">All 4 Pets</a></h1>
+                                                    <ul class="center__row">
+
+                                                        <div class="nav-item "><a href="/home">Home</a></div>
+
+                                                        <li class="nav-item">
+                                                            <a href="/shop">Continue shopping</a>
+                                                        </li>
+                                                    </ul>
+                                                </nav>
+                                         <h1   th:if="${success != null}" th:text="${success}" style="color:green;"></h1>
+
+
+                                            </body>
+                                            </html>

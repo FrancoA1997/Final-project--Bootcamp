@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="es" xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="imgs/filled_pets_icon-icons.com_59360.png">
+    <link rel="stylesheet" href="style-adopciones.css" />
+    <title>Adopt now!</title>
+</head>
+<body>
+<!-- nav -->
+
+<<<<<<< HEAD:ProyectoFinalEgg/src/main/resources/templates/adoptions.html
+<h1 class="logo" > <a href="/">All 4 Pets</a></h1>
+<h1 class="cargar" ><a href="user/uploadPet">Upload your pet!</a></h1>
+=======
+<section id="landing__area" class="container__center">
+   
+  <nav class="center__row">
+    <h1 class="logo" > All 4 Pets </h1>
+    <ul class="center__row">
+      <li><a href="index">Home</a></li>
+      <li><a href="usuario/cargarMascota">Carga una mascota</a></li>
+      <li><a href="login">Inicia Sesion</a></li>   
+     
+    </ul>
+  </nav>
+</section>
+
+>>>>>>> developer:ProyectoFinalEgg/src/main/resources/templates/adopcionesFix.html
+
+    <!--cards-->
+ 
+<<<<<<< HEAD:ProyectoFinalEgg/src/main/resources/templates/adoptions.html
+      <tbody>
+          <tr  th:each="petEntity:${pet}">
+               <td>
+=======
+          <div  th:each="mascota:${mascota}">
+               
+>>>>>>> developer:ProyectoFinalEgg/src/main/resources/templates/adopcionesFix.html
+    <div class="container">
+         
+        <div class="card">
+            
+          <div  class="box">
+           
+
+            <div class="content">
+           <img  widght='50' height="250" th:src="${'/image/pet?id=' + petEntity.id}" >
+              <h3   th:text="${petEntity.type}"> </h3>
+              <p th:text="${petEntity.state}"> 💕😔</p>
+              <p   th:text="${petEntity.observations}">Lorem ipsum dolor sit amet consectetur adipisicing elit. Labore, totam velit? Iure nemo labore inventore?</p>
+              <a  th:href="@{user/profilePetOwner(id=${petEntity.userId})}">Adopt</a>
+            </div>
+             
+            
+          </div>
+        </div>   
+      </div>  
+      </div>
+      
+</body>
+</html>
+
+
+

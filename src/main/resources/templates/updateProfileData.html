@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Update Profile</title>
+    <link rel="stylesheet" href="/editarDatosPerfil.css">
+    <link rel="icon" href="imgs/filled_pets_icon-icons.com_59360.png">
+</head>
+<body>
+    <form method="POST" action="/user/edit" enctype="multipart/form-data" >
+        <figure aria-hidden="true">
+          <div class="person-body"></div>
+          <div class="neck skin"></div>
+          <div class="head skin">
+            <div class="eyes"></div>
+            <div class="mouth"></div>
+          </div>
+          <div class="hair"></div>
+          <div class="ears"></div>
+          <div class="shirt-1"></div>
+          <div class="shirt-2"></div>
+        </figure>
+        <h1 class="a11y-hidden">Update information</h1>
+        <div>
+          <label class="label-email">
+            <input type="text" th:value="${session.usuariosession.userName}" class="text" name="name" />
+            <span class="required">Name</span>
+          </label>
+        </div>
+       
+        <div>
+            <label class="label-email">
+              <input type="text" th:value="${session.usuariosession.phone}" class="text" name="phone"   />
+              <span class="required">Phone-Number</span>
+            </label>
+          </div>
+
+         
+        <div>
+            <div>
+            <label class="label-email">
+              <input type="text" class="text" th:value="${session.usuariosession.address}" name="address" />
+              <span class="required">Address</span>
+            </label>
+          </div>
+        <div>
+            <div>
+            <label class="label-email">
+              <input type="file" class="text"  name="file"   />
+              <span class="required">Profile picture</span>
+            </label>
+          </div>
+              <input type="hidden" th:value="*{session.usuariosession.id}" class="text" name="id" />
+          </div>
+            <div class="flex">
+            <input type="submit" value="Save!"/>
+            </div>
+            <div class="flex">
+                <a style="text-decoration: none;" th:href="@{/user/profile(id=${session.usuariosession.id})}">
+                    <button type="button" class="back-btn" >Go back to profile
+                    </button>
+                </a>
+            </div>
+
+
+        </div>
+
+    </form>
+
+</body>
+</html>
